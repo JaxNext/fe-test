@@ -1,27 +1,19 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SideMenu from "@/client/components/SideMenu";
 import Panel from "@/client/components/Panel";
 import { DragDropProvider } from '@dnd-kit/react';
 import { move } from '@dnd-kit/helpers';
+import { menuItems as initialMenuItems } from '@/lib/menuData';
 
 export default function Home() {
-  const [menuItems, setMenuItems] = useState<IMenuItemState[] | []>([])
-  useEffect(() => {
-    async function fetchMenuItems() {
-      const res: IMenuItemsResponse = await (await fetch('/api/menu/items')).json() || {}
-      const { list } = res.data || {}
-      const items = list.map((x: IMenuItem, i:number) => {
-        return {
-          ...x,
-          isOpened: false,
-          order: i,
-        }
-      })
-      setMenuItems(items)
-    }
-    fetchMenuItems()
-  }, [])
+  const [menuItems, setMenuItems] = useState<IMenuItemState[]>(() => 
+    initialMenuItems.map((x, i) => ({
+      ...x,
+      isOpened: false,
+      order: i,
+    }))
+  )
   function handleClickItem(item: IMenuItemState) {
     setMenuItems(menuItems.map(x => {
       if (x.id === item.id) {
