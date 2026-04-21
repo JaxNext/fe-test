@@ -37,13 +37,15 @@ export default function Home() {
         list={menuItems}
         onClickItem={handleClickItem} />
       <div className="flex w-full h-[100vh] overflow-x-auto">
-        {menuItems.filter(x => x.isOpened).map(x => {
+        {menuItems.filter(x => x.isOpened).map((x, i) => {
           return (
-          <Panel
-            key={x.id}
-            data={x}
-            onClose={handleClickItem}
-          />)
+              <Panel
+                key={x.id}
+                data={x}
+                index={i}
+                onClose={handleClickItem}
+              />
+          )
         })}
       </div>
     </div>
