@@ -1,15 +1,60 @@
-### 效果图
+# NGA Test Project
 
-![示例图片](s.png)
+## 🚀 Getting Started
 
-### 开发说明
+### Prerequisites
 
-1.  使用 Nextjs 框架，使用 Tailwindcss
-2.  右侧 3 面板在浏览器宽度小的时候可以左右滑动，左侧固定
-3.  面板可以点击(x)关闭，关闭后左侧图标变成透明灰色，点击左侧按钮可以打开/关闭
-4.  使用 DNDKit 开发，三个面板可以顶部左右拖动实现类似
-    https://master--5fc05e08a4a65d0021ae0bf2.chromatic.com/?path=/story/presets-sortable-horizontal--basic-setup
-    的效果
-5.  拖拽排序后左侧的图标也要排序，拽动松手要动画自然
-6.  图标使用 https://heroicons.com/ 图标为:
-    MapIcon, MusicalNoteIcon, ChatBubbleBottomCenterIcon, XMarkIcon
+- Node.js 20+ 
+- pnpm (recommended) or npm
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd fe-test
+```
+
+2. Install dependencies:
+```bash
+pnpm install
+```
+
+3. Run the development server:
+```bash
+pnpm dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Build for Production
+
+```bash
+pnpm build
+pnpm start
+```
+
+## 📁 Project Structure
+
+```
+fe-test/
+├── app/                    # Next.js App Router
+│   ├── api/               # API routes
+│   │   └── menu/items/    # Menu items endpoint
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── client/                # Client-side code
+│   └── components/        # React components
+│       ├── Panel/         # Panel component
+│       └── SideMenu/      # Side menu component
+├── public/                # Static assets
+├── arch_design.md         # Architecture design document
+├── requirements.md        # Project requirements
+└── README.md             # This file
+```
+
+## 📚 Documentation
+
+- [Architecture Design](./arch_design.md) - Detailed architecture and design decisions
+- [Requirements](./requirements.md) - Original project requirements and specifications

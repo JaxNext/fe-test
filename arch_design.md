@@ -2,7 +2,7 @@
 
 ## Requirement
 
-> See [readme.md](./readme.md) for more details.
+> See [requirements.md](./requirements.md.md) for more details.
 
 ## Frameworks Decision
 
@@ -69,4 +69,4 @@
 
 Fetch and maintain the menu item list at top level components, mutations from menu item and panel all commit to top level.
 
-Handle loading and error status.
+TODO: Handle loading and error status.
