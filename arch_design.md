@@ -69,4 +69,4 @@
 
 Fetch and maintain the menu item list at top level components, mutations from menu item and panel all commit to top level.
 
-TODO: Handle loading and error status.
+Handle loading and error status.

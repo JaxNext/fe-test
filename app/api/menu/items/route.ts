@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 
-export const dynamic = "force-static";
-
 export function GET (): NextResponse<IMenuItemsResponse> {
     return NextResponse.json({
         ok: true,
